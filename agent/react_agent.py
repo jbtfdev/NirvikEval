@@ -1,7 +1,11 @@
 import subprocess
 import re
-from agent.tool_registry import dispatch_tool
+import time
+import uuid
 
+from agent.tool_registry import dispatch_tool
+from tracer.trace_schema import ToolCall, AgentTrace
+from tracer.trace_logger import  save_trace
 
 def ollama_call(system_prompt : str, messages : list[dict]) -> str:
     prompt = system_prompt + "\n\n"
@@ -95,40 +99,66 @@ def run_agent(task: str, max_steps: int = 10):
     Do not speak normally.
     """
     messages = [{"role": "user", "content" : task}]
+    trace_steps = []
+    final_answer = None
+    timed_out = True
+
 
     for step in range(max_steps):
         response = ollama_call(system_prompt, messages)
 
         thought, action, action_input = parse_response(response)
 
-        if action =="Final Answer":
-            return action_input
+        if action == "Final Answer":
+            final_answer = action_input
+            timed_out = False
+            break
 
+        start = time.time()
         observation = dispatch_tool(action, action_input)
+        latency_ms = (time.time() - start) * 1000
+
+        tool_call = ToolCall(
+            step = step + 1,
+            thought = thought,
+            tool_name = action,
+            tool_input = action_input,
+            tool_output = str(observation),
+            latency_ms = round(latency_ms, 2)
+        )
+        trace_steps.append(tool_call)
+
 
         messages.append({"role" : "assistant", "content" : response})
-        messages.append({"role" : "user", "content" : f"Observation : {observation}"})
+        messages.append({"role" : "user", "content" : f"Observation: {observation}"})
         # print(f"\nSTEP {step + 1}")
         # print("RAW RESPONSE:", repr(response))
 
-    return "Max Steps Reached"
+    total_latency = sum(step.latency_ms for step in trace_steps)
+
+    trace = AgentTrace(
+        trace_id = str(uuid.uuid4()),
+        task_id = "manual_test",
+        task = task,
+        steps = trace_steps,
+        final_answer = final_answer,
+        expected_answer = None,
+        passed = False,
+        total_steps = len(trace_steps),
+        total_latency_ms = round(total_latency, 2),
+        timed_out = timed_out
+        )
+
+    return trace
+
 
 
 
 
 if __name__ == "__main__":
-    tests = [
-        "What is 25 * 8 + 13?",
-        "Tell me about Alan Turing.",
-        "What is the capital of Japan?",
-        "How many days since 2024-01-01?",
-        "Use Python code to find the sum of squares from 1 to 5."
-    ]
+    trace = run_agent("What is 25 * 8 + 13?")
 
-    for i, task in enumerate(tests, start=1):
-        print(f"\n========== TEST {i} ==========")
-        print("TASK:", task)
+    save_trace(trace, "../results/manual_test_1.json")
 
-        result = run_agent(task)
-
-        print("RESULT:", repr(result))
+    print("Trace saved successfully.")
+    print("Final Answer:", trace.final_answer)

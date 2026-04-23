@@ -1,0 +1,21 @@
+{
+  "trace_id": "5a4cb383-5e0f-4e7c-8800-997a699828ce",
+  "task_id": "manual_test",
+  "task": "What day is it today?",
+  "steps": [
+    {
+      "step": 1,
+      "thought": "Determine the current date using a specific tool to get the answer",
+      "tool_name": "date_utils",
+      "tool_input": "today",
+      "tool_output": "2026-04-23",
+      "latency_ms": 0.06
+    }
+  ],
+  "final_answer": "2026-04-23",
+  "expected_answer": null,
+  "passed": false,
+  "total_steps": 1,
+  "total_latency_ms": 0.06,
+  "timed_out": false
+}

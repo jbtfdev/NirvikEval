@@ -19,7 +19,7 @@ def date_utils(query: str) ->str:
 
         today = datetime.now().date()
 
-        if query == "today":
+        if query == "today" or "today's date" or "what is the current date?":
             return str(today)
 
         elif query.startswith("days since"):

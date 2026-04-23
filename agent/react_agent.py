@@ -156,9 +156,8 @@ def run_agent(task: str, max_steps: int = 10):
 
 
 if __name__ == "__main__":
-    trace = run_agent("What is 25 * 8 + 13?")
-
-    save_trace(trace, "../results/manual_test_1.json")
+    trace = run_agent("What day is it today?")
+    save_trace(trace, "../results/manual_test_3.json")
 
     print("Trace saved successfully.")
     print("Final Answer:", trace.final_answer)

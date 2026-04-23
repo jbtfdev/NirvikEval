@@ -1,0 +1,21 @@
+{
+  "trace_id": "fc8ee7c4-c30f-49e9-82f7-bef8ec3f52ca",
+  "task_id": "manual_test",
+  "task": "What is 25 * 8 + 13?",
+  "steps": [
+    {
+      "step": 1,
+      "thought": "I need to calculate the result of the expression",
+      "tool_name": "calculator",
+      "tool_input": "25 * 8 + 13",
+      "tool_output": "213",
+      "latency_ms": 6.15
+    }
+  ],
+  "final_answer": "213",
+  "expected_answer": null,
+  "passed": false,
+  "total_steps": 1,
+  "total_latency_ms": 6.15,
+  "timed_out": false
+}

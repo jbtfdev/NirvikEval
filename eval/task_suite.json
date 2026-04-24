@@ -1,0 +1,272 @@
+[
+  {
+    "id": "fact_001",
+    "category": "factual_lookup",
+    "task": "What is the capital of Japan?",
+    "expected_answer": "Tokyo",
+    "ideal_tools": ["wiki_lookup"],
+    "scoring_type": "exact_match",
+    "tolerance": null
+  },
+  {
+    "id": "math_001",
+    "category": "multi_step_math",
+    "task": "What is 25 * 8 + 13?",
+    "expected_answer": "213",
+    "ideal_tools": ["calculator"],
+    "scoring_type": "numeric_match",
+    "tolerance": 0.0
+  },
+  {
+    "id": "code_001",
+    "category": "code_execution",
+    "task": "Use Python to find the sum of squares from 1 to 5.",
+    "expected_answer": "55",
+    "ideal_tools": ["code_executor"],
+    "scoring_type": "numeric_match",
+    "tolerance": 0.0
+  },
+  {
+    "id": "date_001",
+    "category": "date_time_reasoning",
+    "task": "How many days are in 2 weeks?",
+    "expected_answer": "14",
+    "ideal_tools": ["date_utils"],
+    "scoring_type": "numeric_match",
+    "tolerance": 0.0
+  },
+  {
+    "id": "hop_001",
+    "category": "multi_hop",
+    "task": "What is the capital of Japan and what is 10 * 10?",
+    "expected_answer": "Tokyo and 100",
+    "ideal_tools": ["wiki_lookup", "calculator"],
+    "scoring_type": "contains_match",
+    "tolerance": null
+  },
+  {
+    "id": "fact_002",
+    "category": "factual_lookup",
+    "task": "What is the capital of Australia?",
+    "expected_answer": "Canberra",
+    "ideal_tools": ["wiki_lookup"],
+    "scoring_type": "contains_match",
+    "tolerance": null
+  },
+  {
+    "id": "math_002",
+    "category": "multi_step_math",
+    "task": "What is (187 * 349) + 928?",
+    "expected_answer": "66191",
+    "ideal_tools": ["calculator"],
+    "scoring_type": "numeric_match",
+    "tolerance": 0.0
+  },
+  {
+    "id": "code_002",
+    "category": "code_execution",
+    "task": "Use Python to find the sum of numbers from 1 to 100.",
+    "expected_answer": "5050",
+    "ideal_tools": ["code_executor"],
+    "scoring_type": "numeric_match",
+    "tolerance": 0.0
+  },
+  {
+    "id": "date_002",
+    "category": "date_time_reasoning",
+    "task": "How many days are in 3 weeks?",
+    "expected_answer": "21",
+    "ideal_tools": ["date_utils"],
+    "scoring_type": "numeric_match",
+    "tolerance": 0.0
+  },
+  {
+    "id": "hop_002",
+    "category": "multi_hop",
+    "task": "What is the capital of India and what is 12 * 12?",
+    "expected_answer": "Delhi 144",
+    "ideal_tools": ["wiki_lookup", "calculator"],
+    "scoring_type": "contains_match",
+    "tolerance": null
+  },
+  {
+    "id": "fact_003",
+    "category": "factual_lookup",
+    "task": "What is the capital of Brazil?",
+    "expected_answer": "Brasilia",
+    "ideal_tools": ["wiki_lookup"],
+    "scoring_type": "contains_match",
+    "tolerance": null
+  },
+  {
+    "id": "math_003",
+    "category": "multi_step_math",
+    "task": "What is (456 * 23) - 178?",
+    "expected_answer": "10310",
+    "ideal_tools": ["calculator"],
+    "scoring_type": "numeric_match",
+    "tolerance": 0.0
+  },
+  {
+    "id": "code_003",
+    "category": "code_execution",
+    "task": "Use Python to find the factorial of 6.",
+    "expected_answer": "720",
+    "ideal_tools": ["code_executor"],
+    "scoring_type": "numeric_match",
+    "tolerance": 0.0
+  },
+  {
+    "id": "date_003",
+    "category": "date_time_reasoning",
+    "task": "How many days are in 5 weeks?",
+    "expected_answer": "35",
+    "ideal_tools": ["date_utils"],
+    "scoring_type": "numeric_match",
+    "tolerance": 0.0
+  },
+  {
+    "id": "hop_003",
+    "category": "multi_hop",
+    "task": "What is the capital of Canada and what is 15 * 15?",
+    "expected_answer": "Ottawa 225",
+    "ideal_tools": ["wiki_lookup", "calculator"],
+    "scoring_type": "contains_match",
+    "tolerance": null
+  },
+  {
+    "id": "fact_004",
+    "category": "factual_lookup",
+    "task": "What is the capital of Kazakhstan?",
+    "expected_answer": "Astana",
+    "ideal_tools": ["wiki_lookup"],
+    "scoring_type": "contains_match",
+    "tolerance": null
+  },
+  {
+    "id": "math_004",
+    "category": "multi_step_math",
+    "task": "What is (873 * 46) + 1297?",
+    "expected_answer": "41455",
+    "ideal_tools": ["calculator"],
+    "scoring_type": "numeric_match",
+    "tolerance": 0.0
+  },
+  {
+    "id": "code_004",
+    "category": "code_execution",
+    "task": "Use Python to find the sum of all even numbers from 1 to 50.",
+    "expected_answer": "650",
+    "ideal_tools": ["code_executor"],
+    "scoring_type": "numeric_match",
+    "tolerance": 0.0
+  },
+  {
+    "id": "date_004",
+    "category": "date_time_reasoning",
+    "task": "How many days are between 2024-01-15 and 2024-02-15?",
+    "expected_answer": "31",
+    "ideal_tools": ["date_utils"],
+    "scoring_type": "numeric_match",
+    "tolerance": 0.0
+  },
+  {
+    "id": "hop_004",
+    "category": "multi_hop",
+    "task": "What is the capital of Kazakhstan and what is 27 * 14?",
+    "expected_answer": "Astana 378",
+    "ideal_tools": ["wiki_lookup", "calculator"],
+    "scoring_type": "contains_match",
+    "tolerance": null
+  },
+  {
+    "id": "fact_005",
+    "category": "factual_lookup",
+    "task": "What is the capital of New Zealand?",
+    "expected_answer": "Wellington",
+    "ideal_tools": ["wiki_lookup"],
+    "scoring_type": "contains_match",
+    "tolerance": null
+  },
+  {
+    "id": "math_005",
+    "category": "multi_step_math",
+    "task": "What is (945 * 38) - 1729?",
+    "expected_answer": "34181",
+    "ideal_tools": ["calculator"],
+    "scoring_type": "numeric_match",
+    "tolerance": 0.0
+  },
+  {
+    "id": "code_005",
+    "category": "code_execution",
+    "task": "Use Python to find the factorial of 7.",
+    "expected_answer": "5040",
+    "ideal_tools": ["code_executor"],
+    "scoring_type": "numeric_match",
+    "tolerance": 0.0
+  },
+  {
+    "id": "date_005",
+    "category": "date_time_reasoning",
+    "task": "How many days are between 2023-12-01 and 2024-01-01?",
+    "expected_answer": "31",
+    "ideal_tools": ["date_utils"],
+    "scoring_type": "numeric_match",
+    "tolerance": 0.0
+  },
+  {
+    "id": "hop_005",
+    "category": "multi_hop",
+    "task": "What is the capital of New Zealand and what is 33 * 19?",
+    "expected_answer": "Wellington 627",
+    "ideal_tools": ["wiki_lookup", "calculator"],
+    "scoring_type": "contains_match",
+    "tolerance": null
+  },
+  {
+    "id": "fact_006",
+    "category": "factual_lookup",
+    "task": "What is the capital of Switzerland?",
+    "expected_answer": "Bern",
+    "ideal_tools": ["wiki_lookup"],
+    "scoring_type": "contains_match",
+    "tolerance": null
+  },
+  {
+    "id": "math_006",
+    "category": "multi_step_math",
+    "task": "What is (1287 * 24) + 564?",
+    "expected_answer": "31452",
+    "ideal_tools": ["calculator"],
+    "scoring_type": "numeric_match",
+    "tolerance": 0.0
+  },
+  {
+    "id": "code_006",
+    "category": "code_execution",
+    "task": "Use Python to find the sum of squares from 1 to 10.",
+    "expected_answer": "385",
+    "ideal_tools": ["code_executor"],
+    "scoring_type": "numeric_match",
+    "tolerance": 0.0
+  },
+  {
+    "id": "date_006",
+    "category": "date_time_reasoning",
+    "task": "How many days are between 2024-02-01 and 2024-03-01?",
+    "expected_answer": "29",
+    "ideal_tools": ["date_utils"],
+    "scoring_type": "numeric_match",
+    "tolerance": 0.0
+  },
+  {
+    "id": "hop_006",
+    "category": "multi_hop",
+    "task": "What is the capital of Switzerland and what is 48 * 12?",
+    "expected_answer": "Bern 576",
+    "ideal_tools": ["wiki_lookup", "calculator"],
+    "scoring_type": "contains_match",
+    "tolerance": null
+  }
+]

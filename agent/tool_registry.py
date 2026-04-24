@@ -28,6 +28,9 @@ def dispatch_tool(name: str, input_text : str) -> str:
     try:
         name = name.strip().lower()
 
+        if "(" in name:
+            name = name.split("(")[0].strip()
+
         tool_func = TOOLS.get(name)
         cleaned = input_text.strip()
 

@@ -97,6 +97,26 @@ def run_agent(task: str, max_steps: int = 10):
 
     Do not repeat the same tool call if the answer is already known.
     Do not speak normally.
+    IMPORTANT:
+    Action must be ONLY the tool name.
+    
+    Valid examples:
+    Action: calculator
+    Action Input: 12 * 12
+    
+    Action: wiki_lookup
+    Action Input: Japan
+    
+    Action: web_search
+    Action Input: capital of India
+    
+    Never write:
+    Action: calculator(...)
+    Action: wiki_lookup(...)
+    Action: web_search(...)
+    
+    Never include arguments inside Action.
+    Put all arguments only inside Action Input.
     """
     messages = [{"role": "user", "content" : task}]
     trace_steps = []

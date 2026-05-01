@@ -1,0 +1,144 @@
+[
+  {
+    "trace_id": "af6ff6b1-a9ca-423d-befb-dcc086ba268b",
+    "task_id": "manual_test",
+    "task": "What is the capital of Japan?",
+    "steps": [
+      {
+        "step": 1,
+        "thought": "I need to find the capital of Japan",
+        "tool_name": "web_search",
+        "tool_input": "capital of Japan",
+        "tool_output": "1. Capital of Japan - Wikipedia\nMarch 17, 2026 - The capital of Japan is Tokyo. Throughout history, the national capital of Japan has been in locations other than Tokyo. The oldest capital is Nara. While no laws have designated Tokyo as the Japanese capital, many laws have defined a \"capital area\" (\u9996\u90fd\u570f, shuto-ken) that incorporates Tokyo.\n\n2. Capital of Japan\nTokyo is the capital of Japan, serving as the seat of the national government, the residence of the Emperor, and the country's primary political, economic, and cultural center since...\n\n3. Tokyo, Japan\nTokyo is the capital of Japan and one of the world's largest cities. Besides being the political center of Japan, Tokyo is also the financial, cultural, and industrial center of Japan and a major international financial center. Tokyo is situated on the Pacific Ocean side of central Honshu, ...",
+        "latency_ms": 3344.54
+      },
+      {
+        "step": 2,
+        "thought": "The answer is likely in the web search results",
+        "tool_name": "code_executor",
+        "tool_input": "```python\nimport re\n\ntext = \"\"\"\n1. Capital of Japan - Wikipedia\nMarch 17, 2026 - The capital of Japan is Tokyo. Throughout history, the national capital of Japan has been in locations other than Tokyo. The oldest capital is Nara. While no laws have designated Tokyo as the Japanese capital, many laws have defined a \"capital area\" (\u9996\u90fd\u570f, shuto-ken) that incorporates Tokyo.\n\n2. Capital of Japan\nTokyo is the capital of Japan, serving as the seat of the national government, the residence of the Emperor, and the country's primary political, economic, and cultural center since...\n\n3. Tokyo, Japan\nTokyo is the capital of Japan and one of the world's largest cities. Besides being the political center of Japan, Tokyo is also the financial, cultural, and industrial center of Japan and a major international financial center. Tokyo is situated on the Pacific Ocean side of central Honshu, ...\n\"\"\"\n\nanswer = re.search(r'capital of Japan is (.*)', text).group(1)\nresult = answer\n```\nAction: result",
+        "tool_output": "Error : name 'python' is not defined",
+        "latency_ms": 0.22
+      },
+      {
+        "step": 3,
+        "thought": "The code_executor tool failed to execute due to a syntax error in the Python code.",
+        "tool_name": "web_search",
+        "tool_input": "capital of Japan",
+        "tool_output": "1. Capital of Japan - Wikipedia\nCapital of Japan The capital of Japan is Tokyo. [1][2][3] Throughout history, the national capital of Japan has been in locations other than Tokyo. The oldest capital is Nara.\n\n2. Tokyo - Wikipedia\nTokyo, [a] officially the Tokyo Metropolis, [b] is the capital and most populous city of Japan. With a population of over 14 million in the city proper in 2023, it is one of the most populous urban areas in the world.\n\n3. Capital of Japan\nTokyo is the capital of Japan, serving as the seat of the national government, the residence of the Emperor, and the country's primary political, economic, and cultural center since...",
+        "latency_ms": 4005.73
+      }
+    ],
+    "final_answer": "Tokyo",
+    "expected_answer": "Tokyo",
+    "passed": true,
+    "total_steps": 3,
+    "total_latency_ms": 7350.49,
+    "timed_out": false,
+    "category": "factual_lookup",
+    "ideal_tools": [
+      "wiki_lookup"
+    ]
+  },
+  {
+    "trace_id": "6470ade7-a92a-4d1c-95c8-d4ba2d352401",
+    "task_id": "manual_test",
+    "task": "What is 25 * 8 + 13?",
+    "steps": [
+      {
+        "step": 1,
+        "thought": "To calculate the value, I need to follow the order of operations (PEMDAS).",
+        "tool_name": "calculator",
+        "tool_input": "25 * 8 + 13",
+        "tool_output": "213",
+        "latency_ms": 0.46
+      }
+    ],
+    "final_answer": "213",
+    "expected_answer": "213",
+    "passed": true,
+    "total_steps": 1,
+    "total_latency_ms": 0.46,
+    "timed_out": false,
+    "category": "multi_step_math",
+    "ideal_tools": [
+      "calculator"
+    ]
+  },
+  {
+    "trace_id": "3763cc30-a1d6-432f-86ac-638d651ea29b",
+    "task_id": "manual_test",
+    "task": "Use Python to find the sum of squares from 1 to 5.",
+    "steps": [
+      {
+        "step": 1,
+        "thought": "To calculate the sum of squares, I need to square each number and then add them up. This can be achieved using a simple loop in Python.",
+        "tool_name": "code_executor",
+        "tool_input": "```\nresult = 0\nfor i in range(1, 6):\n    result += i ** 2\nprint(result)\n```",
+        "tool_output": "0",
+        "latency_ms": 0.17
+      }
+    ],
+    "final_answer": "There is no final answer yet.",
+    "expected_answer": "55",
+    "passed": false,
+    "total_steps": 1,
+    "total_latency_ms": 0.17,
+    "timed_out": false,
+    "category": "code_execution",
+    "ideal_tools": [
+      "code_executor"
+    ]
+  },
+  {
+    "trace_id": "60cd2b93-1246-45c8-b8c6-c9ed66cd8948",
+    "task_id": "manual_test",
+    "task": "How many days are in 2 weeks?",
+    "steps": [
+      {
+        "step": 1,
+        "thought": "This is a simple math question",
+        "tool_name": "calculator",
+        "tool_input": "7 * 2",
+        "tool_output": "14",
+        "latency_ms": 0.32
+      }
+    ],
+    "final_answer": "14",
+    "expected_answer": "14",
+    "passed": true,
+    "total_steps": 1,
+    "total_latency_ms": 0.32,
+    "timed_out": false,
+    "category": "date_time_reasoning",
+    "ideal_tools": [
+      "date_utils"
+    ]
+  },
+  {
+    "trace_id": "2a8d55f9-e838-405d-a445-9fb9fcf07920",
+    "task_id": "manual_test",
+    "task": "What is the capital of Japan and what is 10 * 10?",
+    "steps": [
+      {
+        "step": 1,
+        "thought": "I need to know the capital of Japan and also calculate 10 * 10.",
+        "tool_name": "wiki_lookup",
+        "tool_input": "Capital of Japan\n\nThought: Now that I have the information about the capital of Japan, I should check if it answers both parts of the question.",
+        "tool_output": "The capital of Japan is Tokyo. Throughout history, the national capital of Japan has been in locations other than Tokyo. The oldest capital is Nara.",
+        "latency_ms": 890.83
+      }
+    ],
+    "final_answer": "Tokyo",
+    "expected_answer": "Tokyo and 100",
+    "passed": false,
+    "total_steps": 1,
+    "total_latency_ms": 890.83,
+    "timed_out": false,
+    "category": "multi_hop",
+    "ideal_tools": [
+      "wiki_lookup",
+      "calculator"
+    ]
+  }
+]

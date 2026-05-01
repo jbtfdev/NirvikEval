@@ -5,11 +5,11 @@ from agent.react_agent import run_agent
 from eval.scorer import score_task
 
 with open("eval/task_suite.json", "r") as f:
-    task = json.load(f)
+    tasks = json.load(f)
 
 results = []
 
-for task in task[:5]:
+for task in tasks[:]:
     print(f"Running :{task['id']}")
 
     trace = run_agent(task['task'])
@@ -28,6 +28,9 @@ date_str = datetime.now().strftime("%Y%m%d")
 filename = f"results/eval_run_{date_str}.json"
 
 with open(filename, "w") as f:
+    json.dump(results, f, indent=2)
+
+with open("results/latest.json", "w") as f:
     json.dump(results, f, indent=2)
 
 print(f"\nSaved results to {filename}")
